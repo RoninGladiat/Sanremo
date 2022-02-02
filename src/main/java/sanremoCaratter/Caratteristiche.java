@@ -1,9 +1,10 @@
+package sanremoCaratter;
 
 public class Caratteristiche {
 	
-	String nome;
-	float voto;
-	String addressFolderImg;
+	private String nome;
+	private float voto;
+	private String addressFolderImg;
 	
 	public Caratteristiche() {
 		super();
