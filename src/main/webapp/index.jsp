@@ -86,9 +86,11 @@ Caratteristiche Artist23 = new Caratteristiche();
 Caratteristiche Artist24 = new Caratteristiche();
 
 ArrayList<Caratteristiche> artisti2= (ArrayList<Caratteristiche>)session.getAttribute("Artisti");
+
 String temp = (String)session.getAttribute("ind");
+
 	if(temp!=null){
-		int indic = Integer.valueOf(temp).intValue();
+		int indic = Integer.parseInt(temp);
 		String vot = request.getParameter("voto");
 		artisti2.get(indic).setVoto(vot);
 		session.setAttribute("Artisti",artisti2);
@@ -97,24 +99,31 @@ String temp = (String)session.getAttribute("ind");
 
 String token=(String)session.getAttribute("token");
 ArrayList<Caratteristiche> artisti= new ArrayList<Caratteristiche>();
+
 	Artist1.setNome("Achille Lauro");
 	Artist1.setAddressFolderImg("Achille-Lauro.jpg");
 	artisti.add(Artist1);
+	
 	Artist2.setNome("Aka 7even");
 	Artist2.setAddressFolderImg("Aka-7even.jpg");
 	artisti.add(Artist2);
+	
 	Artist3.setNome("Ana Mena");
 	Artist3.setAddressFolderImg("Ana-mena.jpg");
 	artisti.add(Artist3);
+	
 	Artist4.setNome("Dargen D'Amico");
 	Artist4.setAddressFolderImg("Dargen-d'amico.jpg");
 	artisti.add(Artist4);
+	
 	Artist5.setNome("Ditonellapiaga con Rettore");
 	Artist5.setAddressFolderImg("Ditonellapiaga-con-Rettore.jpg");
 	artisti.add(Artist5);
+	
 	Artist6.setNome("Elisa");
 	Artist6.setAddressFolderImg("Elisa.jpg");
 	artisti.add(Artist6);
+	
 	Artist7.setNome("Emma");
 	Artist7.setAddressFolderImg("Emma.jpg");
 	artisti.add(Artist7);
@@ -122,54 +131,71 @@ ArrayList<Caratteristiche> artisti= new ArrayList<Caratteristiche>();
 	Artist8.setNome("Gianni Morandi");
 	Artist8.setAddressFolderImg("Gianni-Morandi.jpg");
 	artisti.add(Artist8);
+	
 	Artist9.setNome("Giusy Ferreri");
 	Artist9.setAddressFolderImg("giusy-ferreri.jpg");
 	artisti.add(Artist9);
+	
 	Artist10.setNome("Highsnob e Hu");
 	Artist10.setAddressFolderImg("highsnob-hu.jpg");
 	artisti.add(Artist10);
+	
 	Artist11.setNome("Irama");
 	Artist11.setAddressFolderImg("Irama.jpg");
 	artisti.add(Artist11);
+	
 	Artist12.setNome("Iva ZanicchiK");
 	Artist12.setAddressFolderImg("iva-zanicchik.jpg");
 	artisti.add(Artist12);
+	
 	Artist13.setNome("La Rappresentante di Lista");
 	Artist13.setAddressFolderImg("La-Rappresentante-di-Lista.jpg");
 	artisti.add(Artist13);
+	
 	Artist14.setNome("Le Vibrazioni");
 	Artist14.setAddressFolderImg("Le-Vibrazioni.jpg");
 	artisti.add(Artist14);
+	
 	Artist15.setNome("Mahmood e Blanco");
 	Artist15.setAddressFolderImg("Mahmood e Blanco.jpg");
 	artisti.add(Artist15);
+	
 	Artist16.setNome("Massimo Ranieri");
 	Artist16.setAddressFolderImg("Massimo-Ranieri.jpg");
 	artisti.add(Artist16);
+	
 	Artist17.setNome("Matteo Romano");
 	Artist17.setAddressFolderImg("Matteo-Romano.jpg");
 	artisti.add(Artist17);
+	
 	Artist18.setNome("Michele Bravi");
 	Artist18.setAddressFolderImg("Michele-bravi.jpg");
 	artisti.add(Artist18);
+	
 	Artist19.setNome("Noemi");
 	Artist19.setAddressFolderImg("Noemi.jpg");
 	artisti.add(Artist19);
+	
 	Artist20.setNome("Rkomi");
 	Artist20.setAddressFolderImg("Rkomi.jpg");
 	artisti.add(Artist20);
+	
 	Artist21.setNome("Sangiovanni");
 	Artist21.setAddressFolderImg("sangiovanni.jpg");
 	artisti.add(Artist21);
+	
 	Artist22.setNome("Tananai");
 	Artist22.setAddressFolderImg("Tananai.jpg");
 	artisti.add(Artist22);
+	
 	Artist23.setNome("Yuman");
 	Artist23.setAddressFolderImg("Yuman.jpg");
 	artisti.add(Artist23);
+	
 	Artist24.setNome("Fabrizio Moro");
 	Artist24.setAddressFolderImg("Fabrizio-Moro.jpg");
 	artisti.add(Artist24);
+	
 	if(token!="True"){
 		session.setAttribute("Artisti",artisti);
 	}
