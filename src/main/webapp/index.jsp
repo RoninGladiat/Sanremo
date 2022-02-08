@@ -59,80 +59,119 @@
 </head>
 <body>
 <%
-Caratteristiche Artist = new Caratteristiche();
+
+Caratteristiche Artist1 = new Caratteristiche();
+Caratteristiche Artist2 = new Caratteristiche();
+Caratteristiche Artist3 = new Caratteristiche();
+Caratteristiche Artist4 = new Caratteristiche();
+Caratteristiche Artist5 = new Caratteristiche();
+Caratteristiche Artist6 = new Caratteristiche();
+Caratteristiche Artist7 = new Caratteristiche();
+Caratteristiche Artist8 = new Caratteristiche();
+Caratteristiche Artist9 = new Caratteristiche();
+Caratteristiche Artist10 = new Caratteristiche();
+Caratteristiche Artist11 = new Caratteristiche();
+Caratteristiche Artist12 = new Caratteristiche();
+Caratteristiche Artist13 = new Caratteristiche();
+Caratteristiche Artist14 = new Caratteristiche();
+Caratteristiche Artist15 = new Caratteristiche();
+Caratteristiche Artist16 = new Caratteristiche();
+Caratteristiche Artist17 = new Caratteristiche();
+Caratteristiche Artist18 = new Caratteristiche();
+Caratteristiche Artist19 = new Caratteristiche();
+Caratteristiche Artist20 = new Caratteristiche();
+Caratteristiche Artist21 = new Caratteristiche();
+Caratteristiche Artist22 = new Caratteristiche();
+Caratteristiche Artist23 = new Caratteristiche();
+Caratteristiche Artist24 = new Caratteristiche();
+
 ArrayList<Caratteristiche> artisti= new ArrayList<Caratteristiche>();
-Artist.setNome("Achille Lauro");
-Artist.setAddressFolderImg("Achille-Lauro.jpg");
-artisti.add(0,Artist);
-Artist.setNome("Aka 7even");
-Artist.setAddressFolderImg("Aka-7even.jpg");
-artisti.add(1,Artist);
-Artist.setNome("Ana Mena");
-Artist.setAddressFolderImg("Ana-mena.jpg");
-artisti.add(2,Artist);
-Artist.setNome("Dargen D'Amico");
-Artist.setAddressFolderImg("Dargen-d'amico.jpg");
-artisti.add(3,Artist);
-Artist.setNome("Ditonellapiaga con Rettore");
-Artist.setAddressFolderImg("Ditonellapiaga-con-Rettore.jpg");
-artisti.add(4,Artist);
-Artist.setNome("Elisa");
-Artist.setAddressFolderImg("Elisa.jpg");
-artisti.add(5,Artist);
-Artist.setNome("Emma");
-Artist.setAddressFolderImg("Emma.jpg");
-artisti.add(6,Artist);
-Artist.setNome("Fabrizio Moro");
-Artist.setAddressFolderImg("Fabrizio-Moro.jpg");
-artisti.add(7,Artist);
-Artist.setNome("Gianni Morandi");
-Artist.setAddressFolderImg("Gianni-Morandi.jpg");
-artisti.add(8,Artist);
-Artist.setNome("Giusy Ferreri");
-Artist.setAddressFolderImg("giusy-ferreri.jpg");
-artisti.add(9,Artist);
-Artist.setNome("Highsnob e Hu");
-Artist.setAddressFolderImg("highsnob-hu.jpg");
-artisti.add(10,Artist);
-Artist.setNome("Irama");
-Artist.setAddressFolderImg("Irama.jpg");
-artisti.add(11,Artist);
-Artist.setNome("Iva ZanicchiK");
-Artist.setAddressFolderImg("iva-zanicchik.jpg");
-artisti.add(12,Artist);
-Artist.setNome("La Rappresentante di Lista");
-Artist.setAddressFolderImg("La-Rappresentante-di-Lista.jpg");
-artisti.add(13,Artist);
-Artist.setNome("Le Vibrazioni");
-Artist.setAddressFolderImg("Le_vibrazioni.jpg");
-artisti.add(14,Artist);
-Artist.setNome("Mahmood e Blanco");
-Artist.setAddressFolderImg("Mahmood-e-Blanco.jpg");
-artisti.add(15,Artist);
-Artist.setNome("Massimo Ranieri");
-Artist.setAddressFolderImg("Massimo-Ranieri.jpg");
-artisti.add(16,Artist);
-Artist.setNome("Matteo Romano");
-Artist.setAddressFolderImg("Matteo-Romano.jpg");
-artisti.add(17,Artist);
-Artist.setNome("Michele Bravi");
-Artist.setAddressFolderImg("michele-bravi.jpg");
-artisti.add(18,Artist);
-Artist.setNome("Noemi");
-Artist.setAddressFolderImg("Noemi.jpg");
-artisti.add(19,Artist);
-Artist.setNome("Rkomi");
-Artist.setAddressFolderImg("Rkomi.jpg");
-artisti.add(20,Artist);
-Artist.setNome("Sangiovanni");
-Artist.setAddressFolderImg("Sangiovanni.jpg");
-artisti.add(21,Artist);
-Artist.setNome("Tananai");
-Artist.setAddressFolderImg("Tananai.jpg");
-artisti.add(22,Artist);
-Artist.setNome("Yuman");
-Artist.setAddressFolderImg("Yuman.jpg");
-artisti.add(23,Artist);
+
+Artist1.setNome("Achille Lauro");
+Artist1.setAddressFolderImg("Achille-Lauro.jpg");
+artisti.add(Artist1);
+Artist2.setNome("Aka 7even");
+Artist2.setAddressFolderImg("Aka-7even.jpg");
+artisti.add(Artist2);
+Artist3.setNome("Ana Mena");
+Artist3.setAddressFolderImg("Ana-mena.jpg");
+artisti.add(Artist3);
+Artist4.setNome("Dargen D'Amico");
+Artist4.setAddressFolderImg("Dargen-d'amico.jpg");
+artisti.add(Artist4);
+Artist5.setNome("Ditonellapiaga con Rettore");
+Artist5.setAddressFolderImg("Ditonellapiaga-con-Rettore.jpg");
+artisti.add(Artist5);
+Artist6.setNome("Elisa");
+Artist6.setAddressFolderImg("Elisa.jpg");
+artisti.add(Artist6);
+Artist7.setNome("Emma");
+Artist7.setAddressFolderImg("Emma.jpg");
+artisti.add(Artist7);
+
+Artist8.setNome("Gianni Morandi");
+Artist8.setAddressFolderImg("Gianni-Morandi.jpg");
+artisti.add(Artist8);
+Artist9.setNome("Giusy Ferreri");
+Artist9.setAddressFolderImg("giusy-ferreri.jpg");
+artisti.add(Artist9);
+Artist10.setNome("Highsnob e Hu");
+Artist10.setAddressFolderImg("highsnob-hu.jpg");
+artisti.add(Artist10);
+Artist11.setNome("Irama");
+Artist11.setAddressFolderImg("Irama.jpg");
+artisti.add(Artist11);
+Artist12.setNome("Iva ZanicchiK");
+Artist12.setAddressFolderImg("iva-zanicchik.jpg");
+artisti.add(Artist12);
+Artist13.setNome("La Rappresentante di Lista");
+Artist13.setAddressFolderImg("La-Rappresentante-di-Lista.jpg");
+artisti.add(Artist13);
+Artist14.setNome("Le Vibrazioni");
+Artist14.setAddressFolderImg("Le-Vibrazioni.jpg");
+artisti.add(Artist14);
+Artist15.setNome("Mahmood e Blanco");
+Artist15.setAddressFolderImg("Mahmood e Blanco.jpg");
+artisti.add(Artist15);
+Artist16.setNome("Massimo Ranieri");
+Artist16.setAddressFolderImg("Massimo-Ranieri.jpg");
+artisti.add(Artist16);
+Artist17.setNome("Matteo Romano");
+Artist17.setAddressFolderImg("Matteo-Romano.jpg");
+artisti.add(Artist17);
+Artist18.setNome("Michele Bravi");
+Artist18.setAddressFolderImg("Michele-bravi.jpg");
+artisti.add(Artist18);
+Artist19.setNome("Noemi");
+Artist19.setAddressFolderImg("Noemi.jpg");
+artisti.add(Artist19);
+Artist20.setNome("Rkomi");
+Artist20.setAddressFolderImg("Rkomi.jpg");
+artisti.add(Artist20);
+Artist21.setNome("Sangiovanni");
+Artist21.setAddressFolderImg("sangiovanni.jpg");
+artisti.add(Artist21);
+Artist22.setNome("Tananai");
+Artist22.setAddressFolderImg("Tananai.jpg");
+artisti.add(Artist22);
+Artist23.setNome("Yuman");
+Artist23.setAddressFolderImg("Yuman.jpg");
+artisti.add(Artist23);
+Artist24.setNome("Fabrizio Moro");
+Artist24.setAddressFolderImg("Fabrizio-Moro.jpg");
+artisti.add(Artist24);
+
+String token=(String)session.getAttribute("token");
+int indic = Integer.valueOf(request.getParameter("indice")).intValue();
+
+	if(request.getParameter("indice")!=null){
+		int vot = Integer.valueOf(request.getParameter("voto")).intValue();
+		artisti.get(indic).setVoto(vot);
+	}
+	if(token!="true"){
+		session.setAttribute("Artisti",artisti);
+	}
+	
 %>
 
 <div id="header">
@@ -145,7 +184,15 @@ artisti.add(23,Artist);
 	int b=0;
 	out.print("<tr>");
 		for(int i=0;i<24;i++){
-			out.print("<td><a href=\"\"><img src=\"img/"+artisti.get(i).getAddressFolderImg()+"\"/></a></td>");
+			out.print("<td>");
+			out.print("<div class=\"card\" style=\"width: 200px;\">"+
+			 " <img class=\"card-img-top\" src=\"img/"+artisti.get(i).getAddressFolderImg()+"\" alt=\"Card image cap\">"+
+			  "<div class=\"card-body\">"+
+			    "<h6 class=\"card-title\">"+artisti.get(i).getNome()+"</h6>"+
+			    "<a href=\"Voto.jsp?indice="+i+"\" class=\"btn btn-primary\">Vota questo artista</a>"+
+			  "</div>"+
+			"</div>");
+			out.print("</td>");
 			b+=1;
 				if(b==4){
 					b=0;
