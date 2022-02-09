@@ -223,7 +223,7 @@ if(token!="true"){
 
 	String temp = (String)session.getAttribute("ind");
 	int indic = Integer.parseInt(temp);
-	int vot = Integer.parseInt(request.getParameter("voto"));
+	int vot = Integer.valueOf(request.getParameter("voto")).intValue();
 	artisti2.get(indic).setVoto(vot);
 	session.setAttribute("Artisti",artisti2);
 	

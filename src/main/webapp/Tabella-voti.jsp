@@ -61,7 +61,9 @@
 <div id="header">
 	<h1><a href="index.jsp">Sanremo 2022</a></h1>
 </div>
+
 <div id="main">
+<h1>Voti:</h1>
 <table>
 <% 
 int b=0;
@@ -71,17 +73,20 @@ int b=0;
 			
 			int inVVoto = artisti.get(i).getVoto();
 			String voto=String.valueOf(artisti.get(i).getVoto());
-				if(inVVoto>=0){
-					posOneg="Positivo";
+				if(inVVoto>0){
+					posOneg="Voto Positivo";
+				}else if (inVVoto<0){
+					posOneg="Voto Negativo";
 				}else{
-					posOneg="Negativo";
+					posOneg="Non hai votato questo artista.";
+					
 				}
 			out.print("<td>");
 			out.print("<div class=\"card\" style=\"width: 200px;\">"+
 			 " <img class=\"card-img-top\" src=\"img/"+artisti.get(i).getAddressFolderImg()+"\" alt=\"Card image cap\">"+
 			  "<div class=\"card-body\">"+
-			    "<h6 class=\"card-title\">"+artisti.get(i).getNome()+"</h6>"+
-			    "<b>"+posOneg+"</b>"+
+			    "<h4 class=\"card-title\">"+artisti.get(i).getNome()+"</h4>"+
+			    "<p>"+posOneg+"</p>"+
 			  "</div>"+
 			"</div>");
 			out.print("</td>");
