@@ -162,12 +162,9 @@ Artist24.setAddressFolderImg("Fabrizio-Moro.jpg");
 artisti.add(Artist24);
 
 String token=(String)session.getAttribute("token");
-int indic = Integer.valueOf(request.getParameter("indice")).intValue();
-
-	if(request.getParameter("indice")!=null){
+int indic = (int)session.getAttribute("in");
 		int vot = Integer.valueOf(request.getParameter("voto")).intValue();
 		artisti.get(indic).setVoto(vot);
-	}
 	if(token!="true"){
 		session.setAttribute("Artisti",artisti);
 	}

@@ -61,13 +61,14 @@
 session.setAttribute("token", "True");
 ArrayList<Caratteristiche> artisti= (ArrayList<Caratteristiche>)session.getAttribute("Artisti");
 int posizione = Integer.valueOf(request.getParameter("indice")).intValue();
+session.setAttribute("in",posizione);
 %>
 <div id="header">
 	<h1><a href="index.jsp">Sanremo 2022</a></h1>
 </div>
 <div id="main">
 	<h3><%=artisti.get(posizione).getNome()%></h3>
-	<form method="post" action="index.jsp?indice=<%=posizione %>">
+	<form method="post" action="index.jsp">
 	Voto:
 	<input type="number" max="10" name="voto" >
 	</form>
