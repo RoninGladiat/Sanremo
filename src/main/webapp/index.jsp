@@ -58,6 +58,15 @@
 </style>
 </head>
 <body>
+
+
+<div id="header">
+	<h1><a href="index.jsp">Sanremo 2022</a></h1>
+</div>
+
+<div id="main">
+	<h3>Artisti di Sanremo 2022</h3>
+	<table>
 <%
 
 Caratteristiche Artist1 = new Caratteristiche();
@@ -85,26 +94,12 @@ Caratteristiche Artist22 = new Caratteristiche();
 Caratteristiche Artist23 = new Caratteristiche();
 Caratteristiche Artist24 = new Caratteristiche();
 
-ArrayList<Caratteristiche> artisti2= (ArrayList<Caratteristiche>)session.getAttribute("Artisti");
-
-String temp = (String)session.getAttribute("ind");
-
-	if(temp!=null){
-		int indic = Integer.parseInt(temp);
-		String vot = request.getParameter("voto");
-		artisti2.get(indic).setVoto(vot);
-		session.setAttribute("Artisti",artisti2);
-	}
 
 
 String token=(String)session.getAttribute("token");
-<<<<<<< HEAD
-int indic = (int)session.getAttribute("in");
-		int vot = Integer.valueOf(request.getParameter("voto")).intValue();
-		artisti.get(indic).setVoto(vot);
-	if(token!="true"){
-=======
-ArrayList<Caratteristiche> artisti= new ArrayList<Caratteristiche>();
+
+if(token!="true"){
+	ArrayList<Caratteristiche> artisti= new ArrayList<Caratteristiche>();
 
 	Artist1.setNome("Achille Lauro");
 	Artist1.setAddressFolderImg("Achille-Lauro.jpg");
@@ -202,20 +197,8 @@ ArrayList<Caratteristiche> artisti= new ArrayList<Caratteristiche>();
 	Artist24.setAddressFolderImg("Fabrizio-Moro.jpg");
 	artisti.add(Artist24);
 	
-	if(token!="True"){
->>>>>>> branch 'master' of https://github.com/RoninGladiat/Sanremo.git
-		session.setAttribute("Artisti",artisti);
-	}
+	session.setAttribute("Artisti",artisti);
 	
-%>
-
-<div id="header">
-	<h1><a href="index.jsp">Sanremo 2022</a></h1>
-</div>
-<div id="main">
-	<h3>Artisti di Sanremo 2022</h3>
-	<table>
-	<%
 	int b=0;
 	out.print("<tr>");
 		for(int i=0;i<24;i++){
@@ -234,11 +217,41 @@ ArrayList<Caratteristiche> artisti= new ArrayList<Caratteristiche>();
 					out.print("</tr><tr>");
 				}
 		}
-	%>
+	
+}else{
+	ArrayList<Caratteristiche> artisti2= (ArrayList<Caratteristiche>)session.getAttribute("Artisti");
+
+	String temp = (String)session.getAttribute("ind");
+	int indic = Integer.parseInt(temp);
+	int vot = Integer.parseInt(request.getParameter("voto"));
+	artisti2.get(indic).setVoto(vot);
+	session.setAttribute("Artisti",artisti2);
+	
+	int b=0;
+	out.print("<tr>");
+		for(int i=0;i<24;i++){
+			out.print("<td>");
+			out.print("<div class=\"card\" style=\"width: 200px;\">"+
+			 " <img class=\"card-img-top\" src=\"img/"+artisti2.get(i).getAddressFolderImg()+"\" alt=\"Card image cap\">"+
+			  "<div class=\"card-body\">"+
+			    "<h6 class=\"card-title\">"+artisti2.get(i).getNome()+"</h6>"+
+			    "<a href=\"Voto.jsp?indice="+i+"\" class=\"btn btn-primary\">Vota questo artista</a>"+
+			  "</div>"+
+			"</div>");
+			out.print("</td>");
+			b+=1;
+				if(b==4){
+					b=0;
+					out.print("</tr><tr>");
+				}
+		}
+}
+	
+%>
 		</tr>
 		<tr>
 			<td></td>
-			<td><a href="#">Tabella con tutti i voti</a></td>
+			<td><a href="Tabella-voti.jsp">Tabella con tutti i voti</a></td>
 			<td></td>
 		</tr>
 	</table>

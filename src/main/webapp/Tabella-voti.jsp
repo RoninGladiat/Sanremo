@@ -57,24 +57,43 @@
 	
 </style>
 <body>
-<%
-session.setAttribute("token", "True");
-ArrayList<Caratteristiche> artisti= (ArrayList<Caratteristiche>)session.getAttribute("Artisti");
-int posizione = Integer.valueOf(request.getParameter("indice")).intValue();
-session.setAttribute("in",posizione);
-session.setAttribute("ind",posizione);
-%>
+<%ArrayList<Caratteristiche> artisti= (ArrayList<Caratteristiche>)session.getAttribute("Artisti"); %>
 <div id="header">
 	<h1><a href="index.jsp">Sanremo 2022</a></h1>
 </div>
 <div id="main">
-	<h3><%=artisti.get(posizione).getNome()%></h3>
-	<img src="img/<%=artisti.get(posizione).getAddressFolderImg() %>">
-	<form method="post" action="index.jsp">
-	Voto:
-	<input type="number" max="10" min="-10" name="voto" >
-	<input type="Submit" name="Invio">
-	</form>
+<table>
+<% 
+int b=0;
+	out.print("<tr>");
+		for(int i=0;i<24;i++){
+			String posOneg="";
+			
+			int inVVoto = artisti.get(i).getVoto();
+			String voto=String.valueOf(artisti.get(i).getVoto());
+				if(inVVoto>=0){
+					posOneg="Positivo";
+				}else{
+					posOneg="Negativo";
+				}
+			out.print("<td>");
+			out.print("<div class=\"card\" style=\"width: 200px;\">"+
+			 " <img class=\"card-img-top\" src=\"img/"+artisti.get(i).getAddressFolderImg()+"\" alt=\"Card image cap\">"+
+			  "<div class=\"card-body\">"+
+			    "<h6 class=\"card-title\">"+artisti.get(i).getNome()+"</h6>"+
+			    "<b>"+posOneg+"</b>"+
+			  "</div>"+
+			"</div>");
+			out.print("</td>");
+			b+=1;
+				if(b==4){
+					b=0;
+					out.print("</tr><tr>");
+				}
+		}
+		out.print("</tr>");
+%>
+</table>
 </div>
 </body>
 </html>
