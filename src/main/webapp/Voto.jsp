@@ -61,16 +61,25 @@
 session.setAttribute("token", "True");
 ArrayList<Caratteristiche> artisti= (ArrayList<Caratteristiche>)session.getAttribute("Artisti");
 int posizione = Integer.valueOf(request.getParameter("indice")).intValue();
+<<<<<<< HEAD
 session.setAttribute("in",posizione);
+=======
+session.setAttribute("ind",posizione);
+>>>>>>> branch 'master' of https://github.com/RoninGladiat/Sanremo.git
 %>
 <div id="header">
 	<h1><a href="index.jsp">Sanremo 2022</a></h1>
 </div>
 <div id="main">
 	<h3><%=artisti.get(posizione).getNome()%></h3>
+<<<<<<< HEAD
+=======
+	
+>>>>>>> branch 'master' of https://github.com/RoninGladiat/Sanremo.git
 	<form method="post" action="index.jsp">
 	Voto:
-	<input type="number" max="10" name="voto" >
+	<input type="number" max="10" min="-10" name="voto" >
+	<input type="Submit" name="Invio">
 	</form>
 </div>
 </body>

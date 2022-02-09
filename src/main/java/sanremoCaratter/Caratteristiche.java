@@ -3,7 +3,7 @@ package sanremoCaratter;
 public class Caratteristiche {
 	
 	private String nome;
-	private int voto;
+	private String voto;
 	private String addressFolderImg;
 	
 	public Caratteristiche() {
@@ -11,7 +11,7 @@ public class Caratteristiche {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public Caratteristiche(String nome, int voto , String addressFolderImg) {
+	public Caratteristiche(String nome, String voto , String addressFolderImg) {
 		super();
 		this.nome = nome;
 		this.voto = voto;
@@ -26,11 +26,11 @@ public class Caratteristiche {
 		this.nome = nome;
 	}
 	
-	public int getVoto() {
+	public String getVoto() {
 		return voto;
 	}
 	
-	public void setVoto(int voto) {
+	public void setVoto(String voto) {
 		this.voto = voto;
 	}
 
