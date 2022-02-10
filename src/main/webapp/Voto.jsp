@@ -58,10 +58,9 @@
 </style>
 <body>
 <%
-session.setAttribute("token", "True");
+session.setAttribute("token", "true");
 ArrayList<Caratteristiche> artisti= (ArrayList<Caratteristiche>)session.getAttribute("Artisti");
 int posizione = Integer.valueOf(request.getParameter("indice")).intValue();
-session.setAttribute("in",posizione);
 session.setAttribute("ind",posizione);
 %>
 <div id="header">
@@ -70,7 +69,7 @@ session.setAttribute("ind",posizione);
 <div id="main">
 	<h3><%=artisti.get(posizione).getNome()%></h3>
 	<img src="img/<%=artisti.get(posizione).getAddressFolderImg() %>">
-	<form method="post" action="index.jsp">
+	<form method="POST" action="index.jsp">
 	Voto:
 	<input type="number" max="10" min="-10" name="voto" >
 	<input type="Submit" name="Invio">

@@ -220,12 +220,27 @@ if(token!="true"){
 	
 }else{
 	ArrayList<Caratteristiche> artisti2= (ArrayList<Caratteristiche>)session.getAttribute("Artisti");
-
-	String temp = (String)session.getAttribute("ind");
-	int indic = Integer.parseInt(temp);
-	int vot = Integer.valueOf(request.getParameter("voto")).intValue();
-	artisti2.get(indic).setVoto(vot);
-	session.setAttribute("Artisti",artisti2);
+	
+	String token2 = (String)session.getAttribute("token2");
+	if(token2!="true"){
+		int indic = (int)session.getAttribute("ind");
+		String posOneg="";
+		String temp=request.getParameter("voto");
+			if(temp!=""){
+				int voto = Integer.parseInt(request.getParameter("voto"));
+					if(voto>0){
+						posOneg="Hai inserito un voto positivo.";
+					}else if(voto<0){
+						posOneg="Hai inserito un voto negativo.";
+					}else if(voto==0){
+						posOneg="Hai inserito un voto neutrale.";
+					}
+			}
+		artisti2.get(indic).setVoto(posOneg);
+		session.setAttribute("Artisti",artisti2);
+		session.setAttribute("token2","false");
+		
+	}
 	
 	int b=0;
 	out.print("<tr>");
@@ -256,26 +271,6 @@ if(token!="true"){
 		</tr>
 	</table>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>

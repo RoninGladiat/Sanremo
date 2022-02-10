@@ -66,27 +66,22 @@
 <h1>Voti:</h1>
 <table>
 <% 
+session.setAttribute("token2","true");
 int b=0;
 	out.print("<tr>");
 		for(int i=0;i<24;i++){
-			String posOneg="";
 			
-			int inVVoto = artisti.get(i).getVoto();
-			String voto=String.valueOf(artisti.get(i).getVoto());
-				if(inVVoto>0){
-					posOneg="Voto Positivo";
-				}else if (inVVoto<0){
-					posOneg="Voto Negativo";
-				}else{
-					posOneg="Non hai votato questo artista.";
-					
-				}
 			out.print("<td>");
 			out.print("<div class=\"card\" style=\"width: 200px;\">"+
 			 " <img class=\"card-img-top\" src=\"img/"+artisti.get(i).getAddressFolderImg()+"\" alt=\"Card image cap\">"+
 			  "<div class=\"card-body\">"+
-			    "<h4 class=\"card-title\">"+artisti.get(i).getNome()+"</h4>"+
-			    "<p>"+posOneg+"</p>"+
+			    "<h4 class=\"card-title\">"+artisti.get(i).getNome()+"</h4><p>");
+				if(artisti.get(i).getVoto()==null){
+					out.print("Non hai votato questo artista.");
+				}else{
+					out.print(artisti.get(i).getVoto()+"</p>");
+				}
+			out.print(
 			  "</div>"+
 			"</div>");
 			out.print("</td>");
