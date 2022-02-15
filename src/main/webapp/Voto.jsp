@@ -1,12 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-    <%@page import="java.util.ArrayList" %>
+    <%@page import="java.util.*" %>
     <%@page import="sanremoCaratter.Caratteristiche" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Vota artista</title>
 </head>
 <style>
 	body {
@@ -58,6 +58,30 @@
 </style>
 <body>
 <%
+Locale locale = request.getLocale(); //istanza oggetto
+String language = locale.getLanguage(); //chiamo metodo lingua
+
+HashMap<String,String> linguaIta = new HashMap<String,String>();
+
+
+linguaIta.put("votes", "Vota:");
+linguaIta.put("button", "Invia!");
+
+
+HashMap<String,String> linguaEng = new HashMap<String,String>();
+
+
+linguaEng.put("votes", "Rate this artist:");
+linguaEng.put("button", "Send your vote!");
+
+HashMap<String,String> linguaAtt = new HashMap<String,String>();
+	if(language=="it"){
+		linguaAtt = linguaIta;
+	}else{
+		linguaAtt = linguaEng;
+	}
+
+
 session.setAttribute("token", "true");
 ArrayList<Caratteristiche> artisti= (ArrayList<Caratteristiche>)session.getAttribute("Artisti");
 int posizione = Integer.valueOf(request.getParameter("indice")).intValue();
@@ -70,9 +94,9 @@ session.setAttribute("ind",posizione);
 	<h3><%=artisti.get(posizione).getNome()%></h3>
 	<img src="img/<%=artisti.get(posizione).getAddressFolderImg() %>">
 	<form method="POST" action="index.jsp?token3=Cambiovoto">
-	Voto:
+	<%=linguaAtt.get("votes")  %>
 	<input type="number" max="10" min="-10" name="voto" >
-	<input type="Submit" name="Invio">
+	<input type="Submit" name="<%=linguaAtt.get("button")%>">
 	</form>
 </div>
 </body>

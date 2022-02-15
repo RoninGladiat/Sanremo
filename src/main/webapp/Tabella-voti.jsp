@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-    <%@page import="java.util.ArrayList" %>
+    <%@page import="java.util.*" %>
     <%@page import="sanremoCaratter.Caratteristiche" %>
 <!DOCTYPE html>
 <html>
@@ -57,13 +57,45 @@
 	
 </style>
 <body>
-<%ArrayList<Caratteristiche> artisti= (ArrayList<Caratteristiche>)session.getAttribute("Artisti"); %>
+<%
+Locale locale = request.getLocale(); //istanza oggetto
+String language = locale.getLanguage(); //chiamo metodo lingua
+
+HashMap<String,String> linguaIta = new HashMap<String,String>();
+
+
+linguaIta.put("votes", "Voti:");
+linguaIta.put("phrase1", "Hai inserito un voto positivo!");
+linguaIta.put("phrase2", "Hai inserito un voto negativo!");
+linguaIta.put("phrase3", "Hai inserito un voto negativo");
+linguaIta.put("phrase4", "Non hai votato questo artista");
+
+
+HashMap<String,String> linguaEng = new HashMap<String,String>();
+
+
+linguaEng.put("votes", "Votes:");
+linguaEng.put("phrase1", "You have entered a positive vote!");
+linguaEng.put("phrase2", "You have entered a negative vote!");
+linguaEng.put("phrase3", "You have entered a neutral vote!");
+linguaEng.put("phrase4", "You haven't entered a vote!");
+
+HashMap<String,String> linguaAtt = new HashMap<String,String>();
+	if(language=="it"){
+		linguaAtt = linguaIta;
+	}else{
+		linguaAtt = linguaEng;
+	}
+
+
+ArrayList<Caratteristiche> artisti= (ArrayList<Caratteristiche>)session.getAttribute("Artisti");
+%>
 <div id="header">
 	<h1><a href="index.jsp">Sanremo 2022</a></h1>
 </div>
 
 <div id="main">
-<h1>Voti:</h1>
+<h1><%=linguaAtt.get("votes") %></h1>
 <table>
 <% 
 session.setAttribute("token2","true");
@@ -77,9 +109,16 @@ int b=0;
 			  "<div class=\"card-body\">"+
 			    "<h4 class=\"card-title\">"+artisti.get(i).getNome()+"</h4><p>");
 				if(artisti.get(i).getVoto()==null){
-					out.print("Non hai votato questo artista.");
+					out.print(linguaAtt.get("phrase4"));
 				}else{
-					out.print(artisti.get(i).getVoto()+"</p>");
+					if(artisti.get(i).getVoto()=="Hai inserito un voto positivo."){
+						out.print(linguaAtt.get("phrase1"));
+					}else if(artisti.get(i).getVoto()=="Hai inserito un voto negativo."){
+						out.print(linguaAtt.get("phrase2"));
+					}else if(artisti.get(i).getVoto()=="Hai inserito un voto neutrale."){
+						out.print(linguaAtt.get("phrase3"));
+					}
+					out.print("</p>");
 				}
 			out.print(
 			  "</div>"+

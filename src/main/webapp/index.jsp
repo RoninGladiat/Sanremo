@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-    <%@page import="java.util.ArrayList" %>
+    <%@page import="java.util.*" %>
     <%@page import="sanremoCaratter.Caratteristiche" %>
 <!DOCTYPE html>
 <html>
@@ -58,14 +58,40 @@
 </style>
 </head>
 <body>
+<%
+Locale locale = request.getLocale(); //istanza oggetto
+String language = locale.getLanguage(); //chiamo metodo lingua
 
+HashMap<String,String> linguaIta = new HashMap<String,String>();
+
+
+linguaIta.put("main", "Artisti di Sanremo 2022:");
+linguaIta.put("tablevotes", "Tabella con tutti i voti!");
+linguaIta.put("bottonevoto", "Vota questo artista!");
+
+
+HashMap<String,String> linguaEng = new HashMap<String,String>();
+
+
+linguaEng.put("main", "Artists of Sanremo 2022:");
+linguaEng.put("tablevotes", "Table with al votes!");
+linguaEng.put("bottonevoto", "Rate this artist!");
+HashMap<String,String> linguaAtt = new HashMap<String,String>();
+	if(language=="it"){
+		linguaAtt = linguaIta;
+	}else{
+		linguaAtt = linguaEng;
+	}
+
+
+%>
 
 <div id="header">
 	<h1><a href="index.jsp">Sanremo 2022</a></h1>
 </div>
 
 <div id="main">
-	<h3>Artisti di Sanremo 2022</h3>
+	<h3><%=linguaAtt.get("main") %></h3>
 	<table>
 <%
 
@@ -207,7 +233,7 @@ if(token!="true"){
 			 " <img class=\"card-img-top\" src=\"img/"+artisti.get(i).getAddressFolderImg()+"\" alt=\"Card image cap\">"+
 			  "<div class=\"card-body\">"+
 			    "<h6 class=\"card-title\">"+artisti.get(i).getNome()+"</h6>"+
-			    "<a href=\"Voto.jsp?indice="+i+"\" class=\"btn btn-primary\">Vota questo artista</a>"+
+			    "<a href=\"Voto.jsp?indice="+i+"\" class=\"btn btn-primary\">"+linguaAtt.get("bottonevoto")+"</a>"+
 			  "</div>"+
 			"</div>");
 			out.print("</td>");
@@ -252,7 +278,7 @@ if(token!="true"){
 			 " <img class=\"card-img-top\" src=\"img/"+artisti2.get(i).getAddressFolderImg()+"\" alt=\"Card image cap\">"+
 			  "<div class=\"card-body\">"+
 			    "<h6 class=\"card-title\">"+artisti2.get(i).getNome()+"</h6>"+
-			    "<a href=\"Voto.jsp?indice="+i+"\" class=\"btn btn-primary\">Vota questo artista</a>"+
+			    "<a href=\"Voto.jsp?indice="+i+"\" class=\"btn btn-primary\">"+linguaAtt.get("bottonevoto")+"</a>"+
 			  "</div>"+
 			"</div>");
 			out.print("</td>");
@@ -268,7 +294,7 @@ if(token!="true"){
 		</tr>
 		<tr>
 			<td></td>
-			<td><a href="Tabella-voti.jsp">Tabella con tutti i voti</a></td>
+			<td><a href="Tabella-voti.jsp"><%=linguaAtt.get("tablevotes") %></a></td>
 			<td></td>
 		</tr>
 	</table>
