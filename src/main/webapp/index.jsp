@@ -223,23 +223,24 @@ if(token!="true"){
 	
 	String token2 = (String)session.getAttribute("token2");
 	if(token2!="true"){
-		int indic = (int)session.getAttribute("ind");
-		String posOneg="";
-		String temp=request.getParameter("voto");
-			if(temp!=""){
-				int voto = Integer.parseInt(request.getParameter("voto"));
-					if(voto>0){
-						posOneg="Hai inserito un voto positivo.";
-					}else if(voto<0){
-						posOneg="Hai inserito un voto negativo.";
-					}else if(voto==0){
-						posOneg="Hai inserito un voto neutrale.";
-					}
-			}
-		artisti2.get(indic).setVoto(posOneg);
-		session.setAttribute("Artisti",artisti2);
-		session.setAttribute("token2","false");
-		
+		if(request.getParameter("token3")=="Cambiovoto"){
+			int indic = (int)session.getAttribute("ind");
+			String posOneg="";
+			String temp=request.getParameter("voto");
+				if(temp!=""){
+					int voto = Integer.parseInt(request.getParameter("voto"));
+						if(voto>0){
+							posOneg="Hai inserito un voto positivo.";
+						}else if(voto<0){
+							posOneg="Hai inserito un voto negativo.";
+						}else if(voto==0){
+							posOneg="Hai inserito un voto neutrale.";
+						}
+				}
+			artisti2.get(indic).setVoto(posOneg);
+			session.setAttribute("Artisti",artisti2);
+			session.setAttribute("token2","false");
+		}
 	}
 	
 	int b=0;

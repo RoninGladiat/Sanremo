@@ -64,12 +64,12 @@ int posizione = Integer.valueOf(request.getParameter("indice")).intValue();
 session.setAttribute("ind",posizione);
 %>
 <div id="header">
-	<h1><a href="index.jsp">Sanremo 2022</a></h1>
+	<h1><a href="index.jsp?token3=Noncambiovoto">Sanremo 2022</a></h1>
 </div>
 <div id="main">
 	<h3><%=artisti.get(posizione).getNome()%></h3>
 	<img src="img/<%=artisti.get(posizione).getAddressFolderImg() %>">
-	<form method="POST" action="index.jsp">
+	<form method="POST" action="index.jsp?token3=Cambiovoto">
 	Voto:
 	<input type="number" max="10" min="-10" name="voto" >
 	<input type="Submit" name="Invio">
