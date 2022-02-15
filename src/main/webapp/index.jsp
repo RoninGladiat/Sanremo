@@ -240,10 +240,10 @@ if(token!="true"){
 				}
 			artisti2.get(indic).setVoto(posOneg);
 			session.setAttribute("Artisti",artisti2);
-			session.setAttribute("token2","false");
 		}
 	}
-	
+
+	session.setAttribute("token2","false");
 	int b=0;
 	out.print("<tr>");
 		for(int i=0;i<24;i++){
