@@ -250,7 +250,7 @@ if(token!="true"){
 	String token2 = (String)session.getAttribute("token2");
 	if(token2!="true"){
 		String token3=request.getParameter("token3");
-		if(token3!="Noncambiovoto"){
+		if(token3.equals("Cambiovoto")){
 			int indic = (int)session.getAttribute("ind");
 			String posOneg="";
 			String temp=request.getParameter("voto");

@@ -72,7 +72,7 @@ HashMap<String,String> linguaEng = new HashMap<String,String>();
 
 
 linguaEng.put("votes", "Rate this artist:");
-linguaEng.put("button", "Send your vote!");
+linguaEng.put("button", "Send!");
 
 HashMap<String,String> linguaAtt = new HashMap<String,String>();
 	if(language=="it"){
