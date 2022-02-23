@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@page import="java.util.Date" %>
+    <%@page import="java.text.SimpleDateFormat" %>
     <%@page import="java.util.*" %>
     <%@page import="sanremoCaratter.Caratteristiche" %>
 <!DOCTYPE html>
@@ -86,6 +88,13 @@ session.setAttribute("token", "true");
 ArrayList<Caratteristiche> artisti= (ArrayList<Caratteristiche>)session.getAttribute("Artisti");
 int posizione = Integer.valueOf(request.getParameter("indice")).intValue();
 session.setAttribute("ind",posizione);
+
+
+Date data = new Date();
+SimpleDateFormat formattazione = new SimpleDateFormat("HH : mm : ss - dd/MM/yyyy");
+String dataFormattata = formattazione.format(data);
+artisti.get(posizione).setOrario(dataFormattata);
+session.setAttribute("Artisti",artisti);
 %>
 <div id="header">
 	<h1><a href="index.jsp?token3=Noncambiovoto">Sanremo 2022</a></h1>

@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Tabella voti</title>
 </head>
 <style>
 	body {
@@ -30,6 +30,11 @@
 		height: 250px;
 		border: 2px solid #aaa;
 	}	
+	
+	.card {
+   		box-shadow: 10px 10px 5px #dedede;
+   		margin-top:10px;
+	}
 	
 	#header {
 		background-color: #800000;
@@ -113,12 +118,14 @@ int b=0;
 				}else{
 					if(artisti.get(i).getVoto()=="Hai inserito un voto positivo."){
 						out.print(linguaAtt.get("phrase1"));
+						out.print("</p><p>"+artisti.get(i).getOrario()+"</p><br>");
 					}else if(artisti.get(i).getVoto()=="Hai inserito un voto negativo."){
-						out.print(linguaAtt.get("phrase2"));
+						out.print(linguaAtt.get("phrase2</p>"));
+						out.print("</p><p>"+artisti.get(i).getOrario()+"</p><br>");
 					}else if(artisti.get(i).getVoto()=="Hai inserito un voto neutrale."){
-						out.print(linguaAtt.get("phrase3"));
+						out.print(linguaAtt.get("phrase3</p>"));
+						out.print("</p><p>"+artisti.get(i).getOrario()+"</p><br>");
 					}
-					out.print("</p>");
 				}
 			out.print(
 			  "</div>"+

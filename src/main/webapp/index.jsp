@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@page import="java.util.Date" %>
+     <%@page import="java.text.SimpleDateFormat" %>
     <%@page import="java.util.*" %>
     <%@page import="sanremoCaratter.Caratteristiche" %>
 <!DOCTYPE html>
@@ -14,6 +16,11 @@
 		margin: 0;
 		padding: 0;
 		text-align: center;
+	}
+	
+	.card {
+   		box-shadow: 10px 10px 5px #dedede;
+   		margin-top:10px;
 	}
 	
 	a {
